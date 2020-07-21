@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.nutritional">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- guide.GuideActivity -->
+        <activity
+            android:name=".activity.guide.GuideActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.main.MainActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.account.AccountActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.account.RegisterActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.account.LoginActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.BillActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.StaffActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.KitchenActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.StorageOperationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.StorageActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.NutrientActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.FoodNutritionActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.CookOperationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.CookActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.PlantActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.ProductionBaseInfoActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.ProductionOperationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.ProductionBaseStaffActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.ProductNumActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.ProduNumOperationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.TransCompanyActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.PortationEnvironmentActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.WareHouseActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.WaterQualityActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.WaterQualityOperationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.PortCompanyStaffActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.main.ParentActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.main.StudentActivity"
+            android:launchMode="singleTask" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.nutritional.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

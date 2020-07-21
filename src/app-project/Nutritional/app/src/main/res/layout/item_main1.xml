@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/main1_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_launcher_background"
+            app:riv_corner_radius="10dp" />
+
+        <TextView
+            android:id="@+id/main1_text"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kaiti"
+            android:gravity="center"
+            android:text="222"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:orientation="vertical">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/main1_img1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_launcher_background"
+            app:riv_corner_radius="10dp" />
+
+        <TextView
+            android:id="@+id/main1_text1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kaiti"
+            android:gravity="center"
+            android:text="222"
+            android:textSize="24sp" />
+    </LinearLayout>
+    <!--    <LinearLayout-->
+
+    <!--        android:id="@+id/line3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="50dp"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:layout_below="@+id/line2"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/main1_img2"-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="100dp"-->
+    <!--            android:src="@drawable/ic_launcher_background" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/main1_text2"-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:fontFamily="@font/kaiti"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="222"-->
+    <!--            android:textSize="24sp" />-->
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/line4"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/line3"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginEnd="50dp"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/main1_img3"-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="100dp"-->
+    <!--            android:src="@drawable/ic_launcher_background" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/main1_text3"-->
+    <!--            android:layout_width="100dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:fontFamily="@font/kaiti"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="222"-->
+    <!--            android:textSize="24sp" />-->
+    <!--    </LinearLayout>-->
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="140dp">
+
+    <TextView
+        android:id="@+id/navigationView_parent_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="查看账单"
+        android:textSize="20sp"
+        android:fontFamily="@font/kaiti"/>
+
+    <TextView
+        android:id="@+id/navigationView_parent_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navigationView_parent_text1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/kaiti"
+        android:text="食品基础信息"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/navigationView_parent_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navigationView_parent_text2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="营养成分信息"
+        android:textSize="20sp"
+        android:fontFamily="@font/kaiti"/>
+    <TextView
+        android:id="@+id/navigationView_parent_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navigationView_parent_text3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="食堂人员信息"
+        android:textSize="20sp"
+        android:fontFamily="@font/kaiti"/>
+    <TextView
+        android:id="@+id/navigationView_parent_text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navigationView_parent_text4"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="种植基地员工信息"
+        android:textSize="20sp"
+        android:fontFamily="@font/kaiti"/>
+    <TextView
+        android:id="@+id/navigationView_parent_text6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navigationView_parent_text5"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="运输公司员工信息"
+        android:textSize="20sp"
+        android:fontFamily="@font/kaiti"/>
+
+</RelativeLayout>

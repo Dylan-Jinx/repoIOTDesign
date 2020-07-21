@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".fragment.plant.PlantFragment2">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/plant2_cardView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="1dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/plant2_plantTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/kaiti"
+                android:maxLength="10"
+                android:text="2020-07-20"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/plant2_harvestTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/plant2_plantTime"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/kaiti"
+                android:maxLength="10"
+                android:text="2020-07-20"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/plant2_seedSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/plant2_plantTime"
+                android:ellipsize="end"
+                android:fontFamily="@font/kaiti"
+                android:maxLines="1"
+                android:text="海南三亚"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/plant2_plantFieldNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/plant2_harvestTime"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/kaiti"
+                android:maxLines="1"
+                android:text="云霄东厦水稻种植基地东二区"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/plant2_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/plant2_plantFieldNum"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/kaiti"
+                android:maxLines="2"
+                android:text="受地区气候影响，估算该水稻种植到成熟的区间应该是四个月"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.company.CompanyFragment2">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/company2_cardView"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardPreventCornerOverlap="true"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+
+            <TextView
+                android:id="@+id/company2_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:text="云霄张二三长途货运有限公司"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/company2_address"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/company2_name"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:text="福建省漳州市云霄县"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/company2_responsibleName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/company2_address"
+                android:layout_marginTop="50dp"
+                android:ellipsize="end"
+                android:gravity="right|center_vertical"
+                android:paddingEnd="30dp"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:text="操作员：张三三"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/company2_telephone"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/company2_responsibleName"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:gravity="right|center_vertical"
+                android:paddingEnd="30dp"
+                android:maxLines="3"
+                android:paddingStart="10dp"
+                android:text="13850526746"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

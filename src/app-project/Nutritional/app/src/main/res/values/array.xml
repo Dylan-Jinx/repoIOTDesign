@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SchoolName">
+        <item>漳州职业技术学院</item>
+        <item>厦门大学</item>
+        <item>重庆大学</item>
+    </string-array>
+</resources>

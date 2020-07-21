@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/nutrientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="名称：蛋白质"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nutrientOtherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nutrientName"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="别称：蛋白质"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nutrientUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/nutrientOtherName"
+                android:layout_marginStart="50dp"
+                android:layout_toRightOf="@id/nutrientOtherName"
+                android:text="单位：克"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/nutrientIntroduction"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/nutrientOtherName"
+                android:layout_alignLeft="@id/nutrientName"
+                android:layout_marginTop="40dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="简介：脂肪是身体组织的重要成分，也是供给热量的主要原料。细胞中的原生质和细胞膜均含有脂肪化合物，食物中的脂类95％以上是甘油三酯，此外还有胆固醇脂和磷脂。" />
+
+            <TextView
+                android:id="@+id/nutrientDeSymptom"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/nutrientIntroduction"
+                android:layout_alignLeft="@id/nutrientName"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="缺失：脂肪是身体组织的重要成分，也是供给热量的主要原料。细胞中的原生质和细胞膜均含有脂肪化合物，食物中的脂类95％以上是甘油三酯，此外还有胆固醇脂和磷脂。" />
+
+            <TextView
+                android:id="@+id/nutrientMuchHarm"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/nutrientDeSymptom"
+                android:layout_alignLeft="@id/nutrientName"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="缺失：脂肪是身体组织的重要成分，也是供给热量的主要原料。细胞中的原生质和细胞膜均含有脂肪化合物，食物中的脂类95％以上是甘油三酯，此外还有胆固醇脂和磷脂。" />
+
+            <TextView
+                android:id="@+id/nutrientSource"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/nutrientMuchHarm"
+                android:layout_alignLeft="@id/nutrientName"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="缺失：脂肪是身体组织的重要成分，也是供给热量的主要原料。细胞中的原生质和细胞膜均含有脂肪化合物，食物中的脂类95％以上是甘油三酯，此外还有胆固醇脂和磷脂。" />
+
+            <TextView
+                android:id="@+id/nutrientHighContentOfSource"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/nutrientSource"
+                android:layout_alignLeft="@id/nutrientName"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="高含量：脂肪是身体组织的重要成分，也是供给热量的主要原料。细胞中的原生质和细胞膜均含有脂肪化合物，食物中的脂类95％以上是甘油三酯，此外还有胆固醇脂和磷脂。" />
+
+            <TextView
+                android:id="@+id/nutrientFocusGroups"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="right"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="适用人群：老年人、幼儿、运动员、孕产妇"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

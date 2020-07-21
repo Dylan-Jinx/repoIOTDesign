@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NutritiveMealSystem.FoodAnalysisServices</name>
+    </assembly>
+    <members>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController">
+            <summary>
+            对食谱表的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.GetAllCookBook">
+            <summary>
+            获取所有食材表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.UseCookBookNameBySearchInfo(System.String)">
+            <summary>
+            根据食谱名查询相关食谱信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.AddCookBook(System.String,System.String,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加食谱表
+            </summary>
+            <param name="cookBookname">食谱名</param>
+            <param name="flavour">配料</param>
+            <param name="material">材料</param>
+            <param name="nutritionalingredient">营养成分</param>
+            <param name="files">食谱图片</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.UpdateCookBook(NutritiveMealSystem.TraceabilityServices.Models.TCookBook)">
+            <summary>
+            修改食谱表内容
+            </summary>
+            <param name="cookBook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeleteCookBook(System.Int32)">
+            <summary>
+            根据id删除食谱
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeletexCookBook(NutritiveMealSystem.TraceabilityServices.Models.TCookBook)">
+            <summary>
+            根据提交的表单删除对象
+            </summary>
+            <param name="cookBook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.CookBookInfoPages(System.Int32,System.Int32)">
+            <summary>
+            分页  网页功能
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">当前页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.CookBookInfoLikePages(System.Int32,System.Int32,System.String)">
+            <summary>
+            模糊查询分页
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">当前页码</param>
+            <param name="likeword">查询词</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.CookBookInfoQueryPages(System.Int32,System.Int32,System.String)">
+            <summary>
+            精准查询并分页
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">当前页码</param>
+            <param name="keyword">查询词</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.FileSave(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="files">文件流</param>
+            <param name="cookname">文件名</param>
+            <param name="filename">输出存储的文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController">
+            <summary>
+            对食品营养成分的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.GetAllFoodNutrition">
+            <summary>
+            获取所有食材的营养成分信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.UseFoodNameBySearchInfo(System.String)">
+            <summary>
+            根据食材名查询营养成分信息
+            </summary>
+            <param name="foodname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.AddFoodNutrionInfo(System.String,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加食材营养成分信息
+            </summary>
+            <param name="foodname">食材名</param>
+            <param name="nutritionalingredient">营养成分</param>
+            <param name="introduce">食材介绍</param>
+            <param name="files">食材图片</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.UpdateFoodNutrionInfo(NutritiveMealSystem.TraceabilityServices.Models.TFoodNutrition)">
+            <summary>
+            修改食材营养成分信息
+            </summary>
+            <param name="datas">数据模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.DeleteFoodNutrionInfo(System.Int32)">
+            <summary>
+            删除食材营养成分信息
+            </summary>
+            <param name="id">食材的id</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.FoodNutrionInfoPages(System.Int32,System.Int32)">
+            <summary>
+            正常分页(属于网页功能)
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.FoodNutrionInfoLikePage(System.String,System.Int32,System.Int32)">
+            <summary>
+            模糊分页（属于网页功能）
+            </summary>
+            <param name="keyword"></param>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.FoodNutritionController.FileSave(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="files">文件流</param>
+            <param name="cookname">文件名</param>
+            <param name="filename">输出存储的文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.Controllers.HealthCheckController">
+            <summary>
+            实现健康、服务状态检查
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.FoodAnalysisServices.Controllers.HealthCheckController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.HealthCheckController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.FoodAnalysisServices.Controllers.HealthCheckController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.HealthCheckController.Get">
+            <summary>
+            用于健康检查，心跳检测，检测服务是否出现异常或者是中断
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController">
+            <summary>
+            对营养素表的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.GetAllNutritionInfo">
+            <summary>
+            返回营养素信息表中所有营养素的基本信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.UseNutritionNameBySearchInfo(System.String)">
+            <summary>
+            用营养素的别名或者是名字查询营养素信息表中所有营养素的基本信息
+            </summary>
+            <param name="NutritionName">营养素名字/别名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.AddNutritionInfo(NutritiveMealSystem.TraceabilityServices.Models.TNutrientInformation)">
+            <summary>
+            添加平台营养素的基础信息
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.UpdateNutritionInfo(NutritiveMealSystem.TraceabilityServices.Models.TNutrientInformation)">
+            <summary>
+            修改平台营养素的基础信息
+            </summary>
+            <param name="datas">模型，参考下面请求体内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.DeleteNutritionInfo(System.Int32)">
+            <summary>
+            修改平台营养素的基础信息
+            </summary>
+            <param name="id">对应内容的id</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.NutritionInfoPages(System.Int32,System.Int32)">
+            <summary>
+            正常分页（属于网页功能）
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">当前页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Controllers.NutrientInfoController.NutritionInfoLikePages(System.String,System.Int32,System.Int32)">
+            <summary>
+            模糊查询分页（网页功能）
+            </summary>
+            <param name="keyword">模糊查询词</param>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">当前页码</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.Models.ReturnModels.NutritionInfoStatus">
+            <summary>
+            返回数据的模型状态类->对应的是营养素信息表，继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.Models.ReturnModels.Status">
+            <summary>
+            状态基类
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.FoodAnalysisServices.Models.ReturnModels.Status.StatusCode">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.FoodAnalysisServices.Models.ReturnModels.Status.Message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.FoodAnalysisServices.Models.ReturnModels.Status.ReturnTime">
+            <summary>
+            返回时间
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.Utility.ConsulHelper">
+            <summary>
+            Consul服务帮助类
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.Utility.ConsulHelper.ConsulExtend(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            扩展，实现Consul的服务注册以及基础设置
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.Add(`0)">
+            <summary>
+            添加一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.Delete(`0)">
+            <summary>
+            删除一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.Update(`0)">
+            <summary>
+            修改一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.getList(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            条件查询
+            </summary>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.getListByPage``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32,System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <typeparam name="Tkey"></typeparam>
+            <param name="where">查询条件</param>
+            <param name="orderBy">排序条件</param>
+            <param name="pageSize">每一页多少条</param>
+            <param name="pageIndex">显示第几页</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

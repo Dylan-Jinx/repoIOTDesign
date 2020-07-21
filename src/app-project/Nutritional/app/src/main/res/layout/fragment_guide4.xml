@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/guide4">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/guide_timer"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/guide_shape"
+        android:gravity="center"
+        android:text="5 跳過"
+        android:fontFamily="@font/kaiti"
+        android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/guide_Intent"
+        android:layout_width="50dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="280dp"
+        android:gravity="center"
+        android:text="立\n即\n體\n驗"
+        android:fontFamily="@font/kaiti"
+        android:textSize="24sp"
+        android:background="@drawable/guide_intent" />
+</RelativeLayout>

@@ -1,0 +1,48 @@
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-15 22:20:56,875 
+【执行时间】：[5149]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "GET api/Bill/BillInfoPages" for actions - NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPages (NutritiveMealSystem.SchoolCookHouseServices),NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPages (NutritiveMealSystem.SchoolCookHouseServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-15 22:22:20,682 
+【执行时间】：[33435]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "GET api/Bill/BillInfoPages" for actions - NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPages (NutritiveMealSystem.SchoolCookHouseServices),NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPages (NutritiveMealSystem.SchoolCookHouseServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-15 22:22:45,440 
+【执行时间】：[7959]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "GET api/Bill/BillInfoPages" for actions - NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPages (NutritiveMealSystem.SchoolCookHouseServices),NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPages (NutritiveMealSystem.SchoolCookHouseServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-15 22:24:47,477 
+【执行时间】：[67868]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "GET api/CookHouseInfo/CookHouseInfoPages" for actions - NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.CookHouseInfoPages (NutritiveMealSystem.SchoolCookHouseServices),NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.CookHouseInfoPages (NutritiveMealSystem.SchoolCookHouseServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

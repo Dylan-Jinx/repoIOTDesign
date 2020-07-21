@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/base_info_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp" />
+
+            <TextView
+                android:id="@+id/base_info_category"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:layout_alignTop="@id/base_info_img"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:text="蔬菜"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/base_info_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/base_info_img"
+                android:layout_marginTop="50dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="云霄东厦水稻种植基地"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/base_info_responsibleName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/base_info_name"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Jinx"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp" />
+
+            <TextView
+                android:id="@+id/base_info_telephone"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/base_info_responsibleName"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="13850526746"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

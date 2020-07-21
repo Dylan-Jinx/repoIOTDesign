@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="MyData" />
+    <version value="2" />
+    <list>
+        <!--        <mapping class="com.gs.pengzhenchuan.gs2010.data.Idea" />-->
+        <mapping class="com.example.nutritional.data.StudentIdea"/>
+        <mapping class="com.example.nutritional.data.ParentIdea"/>
+    </list>
+</litepal>

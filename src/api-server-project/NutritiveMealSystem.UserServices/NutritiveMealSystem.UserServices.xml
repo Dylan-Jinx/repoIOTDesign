@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NutritiveMealSystem.UserServices</name>
+    </assembly>
+    <members>
+        <member name="T:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController">
+            <summary>
+            对T_ChildrenInfo（学校学生信息表）的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController.GetAllChildrenInfo">
+            <summary>
+            返回T_ChildrenInfo（学校学生信息表）的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController.AddChildrenInfo(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            添加学生信息
+            </summary>
+            <param name="name">姓名</param>
+            <param name="stuno">学号</param>
+            <param name="address">地址</param>
+            <param name="parentname">家长姓名</param>
+            <param name="schoolname">学校名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController.DeleteChildrenInfo(System.String,System.String)">
+            <summary>
+            通过学号学校名称删除学生
+            </summary>
+            <param name="stuno">学号</param>
+            <param name="schoolname">学生姓名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController.GetConditionChildrenInfo(System.String,System.String)">
+            <summary>
+            通过学号学校名称查询学生
+            </summary>
+            <param name="stuno">学号</param>
+            <param name="schoolname">学校名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ChildrenInfoController.UpdateChildrenInfo(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            通过学号和学校名称修改学生信息
+            </summary>
+            <param name="conditionuserstuno">学号—条件</param>
+            <param name="conditionuserschoolname">学校名称-条件</param>
+            <param name="name">姓名</param>
+            <param name="stuno">学号</param>
+            <param name="address">地址</param>
+            <param name="parentname">家长姓名</param>
+            <param name="schoolname">学校名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Controllers.HealthCheckController">
+            <summary>
+            实现健康、服务状态检查
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.UserServices.Controllers.HealthCheckController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.HealthCheckController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.UserServices.Controllers.HealthCheckController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.HealthCheckController.Get">
+            <summary>
+            用于健康检查，心跳检测，检测服务是否出现异常或者是中断
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Controllers.ParentInfoController">
+            <summary>
+            对T_ParentInfo（家长表）的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.UserServices.Controllers.ParentInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ParentInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.UserServices.Controllers.ParentInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ParentInfoController.GetAllParentInfo">
+            <summary>
+            返回T_ParentInfo（家长表）的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ParentInfoController.AddParentInfo(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            添加家长用户
+            </summary>
+            <param name="parentname">家长姓名</param>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="childrennum">学生学号</param>
+            <param name="schoolname">学校名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ParentInfoController.DeleteParentInfo(System.String)">
+            <summary>
+            根据用户名对T_ParentInfo（家长表）进行删除
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ParentInfoController.GetConditionParentInfo(System.String)">
+            <summary>
+            通过用户名对T_ParentInfo（家长表）进行查询
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ParentInfoController.VerificationParentInfo(System.String,System.String)">
+            <summary>
+            验证T_ParentInfo（家长表）用户名密码是否正确
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.ParentInfoController.UpdateParentInfo(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            根据用户名修改T_ParentInfo（家长表）信息
+            </summary>
+            <param name="conditionusername">用户名—条件</param>
+            <param name="parentname">家长姓名</param>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="childrennum">学生学号</param>
+            <param name="schoolname">学校名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Controllers.UserInfoController">
+            <summary>
+            对T_UserInfo（用户登录表）的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.UserServices.Controllers.UserInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.UserInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.UserServices.Controllers.UserInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.UserInfoController.GetAllUserInfo">
+            <summary>
+            返回T_UserInfo（用户登录表）的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.UserInfoController.AddUserInfo(System.String,System.String,System.String,System.String)">
+            <summary>
+            添加员工登录账户
+            </summary>
+            <param name="name">姓名</param>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="usertype">职位</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.UserInfoController.DeleteUserInfo(System.String)">
+            <summary>
+            通过用户名对员工进行删除
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.UserInfoController.GetConditionUserInfo(System.String)">
+            <summary>
+            通过用户名对员工进行查询
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.UserInfoController.VerificationUserInfo(System.String,System.String)">
+            <summary>
+            验证用户名密码是否正确
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Controllers.UserInfoController.UpdateUserInfo(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            根据用户名修改员工信息
+            </summary>
+            <param name="conditionusername">用户名—条件</param>
+            <param name="name">姓名</param>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="usertype">职位</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Models.ReturnModels.ChildrenInfoStatus">
+            <summary>
+            返回数据的模型状态类->对应的是T_ChildrenInfo（学校学生信息表）表，继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Models.ReturnModels.ParentInfoStatus">
+            <summary>
+            返回数据的模型状态类->对应的是T_ParentInfo（家长表）表，继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Models.ReturnModels.Status">
+            <summary>
+            状态基类
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.UserServices.Models.ReturnModels.Status.StatusCode">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.UserServices.Models.ReturnModels.Status.Message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.UserServices.Models.ReturnModels.Status.ReturnTime">
+            <summary>
+            返回时间
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Models.ReturnModels.UserInfoStatus">
+            <summary>
+            返回数据的模型状态类->对应的是T_UserInfo（用户登录表）表，继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.UserServices.Utility.ConsulHelper">
+            <summary>
+            Consul服务帮助类
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.UserServices.Utility.ConsulHelper.ConsulExtend(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            扩展，实现Consul的服务注册以及基础设置
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Utility.UpLoadFile.FileSave(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="files">文件流</param>
+            <param name="cookname">文件名</param>
+            <param name="filename">输出存储的文件路径</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

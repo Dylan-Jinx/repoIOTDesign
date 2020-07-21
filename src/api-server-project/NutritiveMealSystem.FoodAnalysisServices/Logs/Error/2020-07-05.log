@@ -1,0 +1,36 @@
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-05 17:21:39,139 
+【执行时间】：[8654]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/CookBook/DeleteCookBook" for actions - NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeleteCookBook (NutritiveMealSystem.FoodAnalysisServices),NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeleteCookBook (NutritiveMealSystem.FoodAnalysisServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-05 17:22:43,674 
+【执行时间】：[8680]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/CookBook/DeleteCookBook" for actions - NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeleteCookBook (NutritiveMealSystem.FoodAnalysisServices),NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeleteCookBook (NutritiveMealSystem.FoodAnalysisServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-05 17:24:16,206 
+【执行时间】：[7240]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/CookBook/DeleteCookBook" for actions - NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeleteCookBook (NutritiveMealSystem.FoodAnalysisServices),NutritiveMealSystem.FoodAnalysisServices.Controllers.CookBookController.DeleteCookBook (NutritiveMealSystem.FoodAnalysisServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

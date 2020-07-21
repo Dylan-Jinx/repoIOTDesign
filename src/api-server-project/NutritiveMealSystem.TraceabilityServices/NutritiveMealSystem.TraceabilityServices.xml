@@ -1,0 +1,707 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NutritiveMealSystem.TraceabilityServices</name>
+    </assembly>
+    <members>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.HealthCheckController">
+            <summary>
+            实现健康、服务状态检查
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.HealthCheckController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.HealthCheckController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.HealthCheckController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.HealthCheckController.Get">
+            <summary>
+            用于健康检查，心跳检测，检测服务是否出现异常或者是中断
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController">
+            <summary>
+            种植信息表操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.GetAllPlantInfo">
+            <summary>
+            获得所有种植信息表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.AddPlantInfo(NutritiveMealSystem.TraceabilityServices.Models.TPlantInfo)">
+            <summary>
+            添加种植信息表
+            </summary>
+            <param name="plantInfo">数据模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UpdatePlantInfo(NutritiveMealSystem.TraceabilityServices.Models.TPlantInfo)">
+            <summary>
+            修改种植信息
+            </summary>
+            <param name="plantInfo">数据模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.DeletePlantInfo(NutritiveMealSystem.TraceabilityServices.Models.TPlantInfo)">
+            <summary>
+            删除种植信息
+            </summary>
+            <param name="plantInfo">数据模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.PlantInfoPages(System.Int32,System.Int32)">
+            <summary>
+            分页显示
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UseNameSearchPage(System.Int32,System.Int32,System.String)">
+            <summary>
+            精准查询
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UseNameSearchLikePage(System.Int32,System.Int32,System.String)">
+            <summary>
+            模糊查询
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="likeword"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController">
+            <summary>
+            商品基础信息表单的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.GetAllProductionBaseInfo">
+            <summary>
+            获得所有商品基础信息表单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.AddProductionBaseInfo(System.String,System.String,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加商品基础信息表单
+            </summary>
+            <param name="proname">商品名</param>
+            <param name="category">商品类型</param>
+            <param name="responsiblename">负责人</param>
+            <param name="tel">电话</param>
+            <param name="file">商品外观图</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.UpdateProuductionBaseInfo(NutritiveMealSystem.TraceabilityServices.Models.TProductionBaseInfo)">
+            <summary>
+            修改商品基础信息
+            </summary>
+            <param name="productionBaseInfo">数据模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.DeleteProductionBaseInfo(NutritiveMealSystem.TraceabilityServices.Models.TProductionBaseInfo)">
+            <summary>
+            删除商品基础信息表
+            </summary>
+            <param name="productionBaseInfo">数据模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.ProductionBaseInfoPage(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.ProductionBaseInfoSearchPage(System.String,System.Int32,System.Int32)">
+            <summary>
+            分页 精准查询
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseInfoController.ProductionBaseInfoSearchLikePage(System.String,System.Int32,System.Int32)">
+            <summary>
+            分页 模糊查询
+            </summary>
+            <param name="pagesize">分页大小</param>
+            <param name="pageindex">页码</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController">
+            <summary>
+            对生产基地员工表的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.GetAllStaff">
+            <summary>
+            获得所有员工信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.AddStaff(System.String,System.String,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加员工
+            </summary>
+            <param name="staffname">员工姓名</param>
+            <param name="tel">电话号码</param>
+            <param name="productionbasename">生产基地名称</param>
+            <param name="level">级别</param>
+            <param name="file">员工图片</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.UpdateStaff(NutritiveMealSystem.TraceabilityServices.Models.TProductionBaseStaff)">
+            <summary>
+            修改员工信息
+            </summary>
+            <param name="productionBaseStaff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.DeleteStaff(NutritiveMealSystem.TraceabilityServices.Models.TProductionBaseStaff)">
+            <summary>
+            删除员工信息
+            </summary>
+            <param name="productionBaseStaff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.StaffPage(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductionBaseStaffController.StaffSearchPage(System.String,System.Int32,System.Int32)">
+            <summary>
+            分页 根据所在生产基地
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController">
+            <summary>
+            对商品批次基本信息表的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.GetAllProductInfo">
+            <summary>
+            查询所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.AddProduct(System.String,System.String,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加商品信息
+            </summary>
+            <param name="productnumber">商品批次编号</param>
+            <param name="productinfo">商品信息</param>
+            <param name="productionbase">生产基地</param>
+            <param name="warehouse">存储仓库</param>
+            <param name="files"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.UpdateProduct(NutritiveMealSystem.TraceabilityServices.Models.TProductNumInfo)">
+            <summary>
+            修改商品信息
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.DeleteProduct(NutritiveMealSystem.TraceabilityServices.Models.TProductNumInfo)">
+            <summary>
+            删除商品信息
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.ProductInfoPages(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.ProductInfoInfoSearchPages(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页查询  根据商品信息
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.ProductNumInfoController.ProductInfoBaseSearchPages(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页查询  根据生产基地
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController">
+            <summary>
+            对运输公司表基本信息的操控
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.GetAllCompanyInfo">
+            <summary>
+            查询所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.AddCompanyInfo(NutritiveMealSystem.TraceabilityServices.Models.TTransportationCompanyInfo)">
+            <summary>
+            添加运输公司信息
+            </summary>
+            <param name="transportationCompanyInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.UpdateCompanyInfo(NutritiveMealSystem.TraceabilityServices.Models.TTransportationCompanyInfo)">
+            <summary>
+            修改运输公司信息
+            </summary>
+            <param name="transportationCompanyInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.DeleteCompanyInfo(NutritiveMealSystem.TraceabilityServices.Models.TTransportationCompanyInfo)">
+            <summary>
+            删除运输公司信息
+            </summary>
+            <param name="transportationCompanyInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.CompanyInfoPage(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.CompanyInfoSearchNamePage(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页 根据公司名查询
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController">
+            <summary>
+            车辆运输环境登记信息
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController.GetAllEnvironmentInfo">
+            <summary>
+            查询所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController.AddEnvironment(NutritiveMealSystem.TraceabilityServices.Models.TTransportationEnvironmentInfo)">
+            <summary>
+            添加车辆环境等信息
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController.UpdateEnvironment(NutritiveMealSystem.TraceabilityServices.Models.TTransportationEnvironmentInfo)">
+            <summary>
+            修改车辆环境等信息
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController.DeleteEnvironment(NutritiveMealSystem.TraceabilityServices.Models.TTransportationEnvironmentInfo)">
+            <summary>
+            删除车辆环境等信息
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController.UseProductNumSearchInfo(System.String)">
+            <summary>
+            用产品批次编号查询运输信息
+            </summary>
+            <param name="productnum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportationEnvironmentInfoController.EnvironmentInfoPages(System.Int32,System.Int32)">
+            <summary>
+            查询所有结果  分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController">
+            <summary>
+            对运输公司员工基本信息的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.GetAllStaffs">
+            <summary>
+            查询所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.AddStaff(System.String,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加员工
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.UpdateStaff(NutritiveMealSystem.TraceabilityServices.Models.TTransportCompanyStaff)">
+            <summary>
+            修改员工信息
+            </summary>
+            <param name="staff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.DeleteStaff(NutritiveMealSystem.TraceabilityServices.Models.TTransportCompanyStaff)">
+            <summary>
+            删除员工信息
+            </summary>
+            <param name="staff"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.StaffPage(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.StaffSearchCompanyPage(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页  根据公司
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="companyname">公司名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.TransportCompanyStaffController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.GetWareHouseInfo">
+            <summary>
+            获得所有仓库信息表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.AddWareHouseInfo(NutritiveMealSystem.TraceabilityServices.Models.TWarehouseInfo)">
+            <summary>
+            添加仓库信息
+            </summary>
+            <param name="warehouseInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.UpdateWareHouseInfo(NutritiveMealSystem.TraceabilityServices.Models.TWarehouseInfo)">
+            <summary>
+            修改仓库信息
+            </summary>
+            <param name="warehouseInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.DeleteWareHouseInfo(NutritiveMealSystem.TraceabilityServices.Models.TWarehouseInfo)">
+            <summary>
+            删除仓库信息
+            </summary>
+            <param name="warehouseInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.WareHouseInfoPage(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WarehouseInfoController.WareHouseInfoSearchNamePage(System.String,System.Int32,System.Int32)">
+            <summary>
+            分页  用仓库名查询
+            </summary>
+            <param name="warehousename">仓库名</param>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="F:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController.GetAllWaterQualityInfo">
+            <summary>
+            查询所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController.UserIdBySearch(System.Int32)">
+            <summary>
+            用id查询基础信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController.AddWaterQuality(System.Double,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加水质监测信息
+            </summary>
+            <param name="samplingdate">检测时间</param>
+            <param name="ph"></param>
+            <param name="comprehensiveevaluation">水质综合评测</param>
+            <param name="remark"></param>
+            <param name="files"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController.UpdateWaterQuality(NutritiveMealSystem.TraceabilityServices.Models.TWaterQualityInfo)">
+            <summary>
+            修改水质监测信息
+            </summary>
+            <param name="waterQualityInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController.DeleteWaterQuality(NutritiveMealSystem.TraceabilityServices.Models.TWaterQualityInfo)">
+            <summary>
+            删除水质监测信息
+            </summary>
+            <param name="waterQualityInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Controllers.WaterQualityController.WaterQualityPage(System.Int32,System.Int32)">
+            <summary>
+            分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.TraceabilityServices.Utility.ConsulHelper">
+            <summary>
+            Consul服务帮助类
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Utility.ConsulHelper.ConsulExtend(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            扩展，实现Consul的服务注册以及基础设置
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.TraceabilityServices.Utility.UpLoadFile.FileSave(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="files">文件流</param>
+            <param name="cookname">文件名</param>
+            <param name="filename">输出存储的文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1">
+            <summary>
+            EF模型帮助类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.Add(`0)">
+            <summary>
+            添加一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.Delete(`0)">
+            <summary>
+            删除一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.Update(`0)">
+            <summary>
+            修改一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.getList(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            条件查询
+            </summary>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.FoodAnalysisServices.EFHelper`1.getListByPage``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32,System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <typeparam name="Tkey"></typeparam>
+            <param name="where">查询条件</param>
+            <param name="orderBy">排序条件</param>
+            <param name="pageSize">每一页多少条</param>
+            <param name="pageIndex">显示第几页</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

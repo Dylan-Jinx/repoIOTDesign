@@ -1,0 +1,525 @@
+﻿@page "/baseControl"
+
+@using Microsoft.JSInterop
+@implements IDisposable
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+
+<div class="bgx">
+
+    <header>
+        <h1 style="font-size:40px;font-weight:bold;color:#fff;text-align: center;">基础管理信息可视化     -当前日期：@{@currentTime}</h1>
+        <div class="showTime"></div>
+    </header>
+
+    <!-- 页面主体部分 -->
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel bar">
+                <h2></h2>
+                <div class="chart" id="staffChart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2>
+                </h2>
+                <div @ref="rounddivElement" class="roundchart chart"></div>
+                <div class="panel-footer" style="float:left;text-align:center;">
+                    @*<img class="" style="height:50px;width:50px;margin-top:50px;" src="img/pic_fan_down.png" id="fanimg" />*@
+                    <label class="Rotation" style="font-size:14px;font-weight:bold;color:#fff;">食堂风扇：</label>
+                    <Switch Checked="false" CheckedChildren='@("开")' UnCheckedChildren='@("关")' OnChange="OpenFan" />
+                    <br />
+                </div>
+            </div>
+            <div class="panel pie">
+                <h2 style="font-weight:bold;font-size:24px">今日配餐</h2>
+                <div class="chart">
+                    @{
+                        <div style="float:left;text-align:center;margin-left:20px;margin-top:10px;">
+                            @if (todayFoodPairList != null)
+                            {
+                                <div style="float:left">
+                                    @for (int i = 0; i <= 4; i++)
+                                    {
+                                        <p style="color:#fff; font-weight:bold;font-size:14px">@todayFoodPairList[i].name</p>
+                                    }
+                                </div>
+                                <div style="float:left;margin-left:10px">
+                                    @for (int i = 5; i <= 9; i++)
+                                    {
+                                        <p style="color:#fff; font-weight:bold;font-size:14px">@todayFoodPairList[i].name</p>
+                                    }
+                                </div>
+
+                                <div style="float:left;margin-left:20px">
+                                    @for (int i = 10; i <= 14; i++)
+                                    {
+                                        <p style="color:#fff; font-weight:bold;font-size:14px">@todayFoodPairList[i].name</p>
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                    }
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="column">
+            <!-- no模块制作 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>@fifthMonthSum</li>
+                        <li>100000</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>本月账单总额</li>
+                        <li>市场供应人数</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图模块 -->
+            <div class="map">
+                <h2 style="font-size:28px;font-weight:bold;color:#fff;text-align: center;">食材运输模拟示意图</h2>
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="panel bar2">
+                <h2 style="font-weight:bold">种植基地水质检测实时汇总</h2>
+                <div class="chart waterqualityChart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            @* 食堂账单变化曲线 *@
+            <div class="panel line2">
+                <h2></h2>
+                <div class="chart billchart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie2">
+                <h2 style="font-weight:bold">食材种植地区分布</h2>
+
+                <div class="chart plantfieldChart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@code{
+    private ElementReference chartdivElement;
+    private ElementReference rounddivElement;
+
+
+    public int[] temphumi = new int[2];
+    public object[] parmasObject;
+    public string dataJsonString;
+    Random temphumiRandom = new Random();
+    Random waterqualityRandom = new Random();
+    /// <summary>
+    /// 配餐数量
+    /// </summary>
+    private int _foodPairCount=15;
+
+    private List<data> datas;
+    /// <summary>
+    /// 当前时间获取
+    /// </summary>
+    public string currentTime { get; set; }
+
+    //水质分析收集
+    private int[] waterquality=new int[3];
+
+    System.Threading.Thread temphumiThread;
+    System.Threading.Thread waterqualityThread;
+
+    string zzy = "漳州职业技术学院";
+    string fzy = "福州职业技术学院";
+    string xhzy = "厦门海洋职业技术学院";
+
+
+    class data
+    {
+        public string name { get; set; }
+        public int value { get; set; }
+    }
+
+    protected override Task OnParametersSetAsync()
+    {
+        new System.Threading.Thread(getCurrentTime).Start();
+        getFiveMonthBill();
+        getStaffCount();
+        getTodayFoodPairing();
+        RetrospectDatasInit();
+        return base.OnParametersSetAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+
+        await JSRuntime.InvokeVoidAsync("flexible", null);
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("removeflexible", null);
+            await JSRuntime.InvokeVoidAsync("startSystem", null);
+            //await JSRuntime.InvokeVoidAsync("startTempHumiListener", temphumi);
+            await JSRuntime.InvokeVoidAsync("staffstartxx", datas);
+            await JSRuntime.InvokeVoidAsync("billStart", monthSumArrayDTO);
+            await JSRuntime.InvokeVoidAsync("plantfieldCounta", typeCountList, typeLists);
+            //await JSRuntime.InvokeVoidAsync("waterqualityStart", waterquality);
+            temphumiThread = new System.Threading.Thread(RandomHumiTemp);
+            waterqualityThread = new System.Threading.Thread(getwaterqualityRandom);
+            temphumiThread.Start();
+            waterqualityThread.Start();
+
+        }
+
+    }
+
+    private void getCurrentTime()
+    {
+        while (true)
+        {
+            currentTime = DateTime.Now.ToString("yyyy-MM-dd");
+        }
+    }
+
+    #region——五个月账单数据的操作——
+    //获得总账单和分割成三个月账单的集合
+    private List<Bill> sumBillLists;
+
+    private List<Bill> firstMonthLists;
+    private List<Bill> secondMonthLists;
+    private List<Bill> thirdMonthLists;
+    private List<Bill> fourthMonthLists;
+    private List<Bill> fifthMonthLists;
+
+    //计算账单开销总数
+    List<int> sumFirstMonthArr = new List<int>();
+    List<int> sumSecondMonthArr = new List<int>();
+    List<int> sumThirdMonthArr = new List<int>();
+    List<int> sumFourthMonthArr = new List<int>();
+    List<int> sumFifthMonthArr = new List<int>();
+
+    int firstMonthSum;
+    int secondMonthSum;
+    int thirdMonthSum;
+    int fourthMonthSum;
+    int fifthMonthSum;
+
+    List<int> monthSumArrayDTO = new List<int>();
+    /// <summary>
+    /// 获得五个月的账单总额  启动账单图表数据
+    /// </summary>
+    private void getFiveMonthBill()
+    {
+        getFiveEveryMonthBill();
+
+        getStorageBillList();
+
+        calcSumDTO();
+    }
+
+    /// <summary>
+    /// 获得存储账单集合
+    /// </summary>
+    private void getStorageBillList()
+    {
+        traverseListDatas(firstMonthLists, sumFirstMonthArr);
+        traverseListDatas(secondMonthLists, sumSecondMonthArr);
+        traverseListDatas(thirdMonthLists, sumThirdMonthArr);
+        traverseListDatas(fourthMonthLists, sumFourthMonthArr);
+        traverseListDatas(fifthMonthLists, sumFifthMonthArr);
+    }
+
+    /// <summary>
+    /// 分类出前五个月每个月账单对象
+    /// </summary>
+    private void getFiveEveryMonthBill()
+    {
+        int getDay = DateTime.Now.Day;
+        DateTime currentDateTime = DateTime.Now.AddDays(-getDay + 1);//7
+        DateTime addfirstDateTime = currentDateTime.AddMonths(1);//8
+        DateTime exfirstDateTime = currentDateTime.AddMonths(-1);//6
+        DateTime exsecondDateTime = currentDateTime.AddMonths(-2);//5
+        DateTime exthirdDateTime = currentDateTime.AddMonths(-3);//4
+        DateTime exfourthDateTime = currentDateTime.AddMonths(-4);//3
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.SchoolCookHouseServices);
+        sumBillLists = api.GetAllCookHouseBill().bill;
+        firstMonthLists = sumBillLists.Where(a => a.billDatetime > exfourthDateTime && a.billDatetime < exthirdDateTime).ToList();
+        secondMonthLists = sumBillLists.Where(a => a.billDatetime > exthirdDateTime && a.billDatetime < exsecondDateTime).ToList();
+        thirdMonthLists = sumBillLists.Where(a => a.billDatetime > exsecondDateTime && a.billDatetime < exfirstDateTime).ToList();
+        fourthMonthLists = sumBillLists.Where(a => a.billDatetime > exfirstDateTime && a.billDatetime < currentDateTime).ToList();
+        fifthMonthLists = sumBillLists.Where(a => a.billDatetime > currentDateTime && a.billDatetime < addfirstDateTime).ToList();
+    }
+    /// <summary>
+    /// 整理为数据传输对象传输给图表
+    /// </summary>
+    private void calcSumDTO()
+    {
+        firstMonthSum = calcPriceSum(sumFirstMonthArr);
+        secondMonthSum = calcPriceSum(sumSecondMonthArr);
+        thirdMonthSum = calcPriceSum(sumThirdMonthArr);
+        fourthMonthSum = calcPriceSum(sumFourthMonthArr);
+        fifthMonthSum = calcPriceSum(sumFifthMonthArr);
+        monthSumArrayDTO.Add(firstMonthSum);
+        monthSumArrayDTO.Add(secondMonthSum);
+        monthSumArrayDTO.Add(thirdMonthSum);
+        monthSumArrayDTO.Add(fourthMonthSum);
+        monthSumArrayDTO.Add(fifthMonthSum);
+    }
+
+    /// <summary>
+    /// 存储账单集合
+    /// </summary>
+    /// <param name="lists"></param>
+    /// <param name="buffData"></param>
+    private void traverseListDatas(List<Bill> lists, List<int> buffData)
+    {
+        foreach (var temp in lists)
+        {
+            buffData.Add(temp.price);
+        }
+    }
+
+    /// <summary>
+    /// 计算每个月的账单总额
+    /// </summary>
+    /// <param name="priceDatas"></param>
+    /// <param name="priceSum"></param>
+    private int calcPriceSum(List<int> priceDatas)
+    {
+        int sum = 0;
+        foreach (var temp in priceDatas)
+        {
+            sum += temp;
+        }
+        return sum;
+    }
+    #endregion
+
+    #region——计算员工总和——
+
+
+    void getStaffCount()
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.SchoolCookHouseServices);
+        List<Staff> staffLists = api.GetCookHouseStaff().staff;
+        int z1 = staffLists.Where(a => a.position.Contains(zzy)).Count();
+        int z2 = staffLists.Where(a => a.position.Contains(fzy)).Count();
+        int z3 = staffLists.Where(a => a.position.Contains(xhzy)).Count();
+
+        datas = new List<data>()
+{
+            new data(){name=zzy,value=z1},
+            new data(){name=fzy,value=z2},
+            new data(){name=xhzy,value=z3}
+        };
+    }
+    #endregion
+
+    #region——今日配餐——
+
+    private List<CookBooks> saveAllFoodPairs;
+    private List<CookBooks> todayFoodPairList = new List<CookBooks>();
+    /// <summary>
+    /// 所有配餐数据存储本地
+    /// </summary>
+    private void getTodayFoodPairing()
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        saveAllFoodPairs = api.GetAllCookBooks().cookBooks;
+        RandomFoodPair(saveAllFoodPairs.Count);
+    }
+    /// <summary>
+    /// 生成今日配餐
+    /// </summary>
+    /// <param name="allcount"></param>
+    private void RandomFoodPair(int allcount)
+    {
+        Random random = new Random();
+        for (int i = 0; i <= _foodPairCount; i++)
+        {
+            int id = random.Next(1, allcount);
+            CookBooks query = saveAllFoodPairs[i];
+            todayFoodPairList.Add(query);
+        }
+    }
+
+    #endregion
+
+    #region——追溯信息操作——
+    /// <summary>
+    /// 种植信息
+    /// </summary>
+    List<PlantInfos> plantInfos;
+    /// <summary>
+    /// 运输环境信息
+    /// </summary>
+    List<EnvironmentInfos> environmentInfos;
+    /// <summary>
+    /// 仓库信息
+    /// </summary>
+    List<Warehouses> wareHouses;
+    /// <summary>
+    /// 水质检测信息
+    /// </summary>
+    List<WaterQualityInfos> waterQualityInfos;
+    /// <summary>
+    /// 产品批次信息
+    /// </summary>
+    List<Products> products;
+    /// <summary>
+    /// 产品基地信息
+    /// </summary>
+    List<ProductionBaseInfos> productionBaseInfos;
+
+    List<int> typeCountList;
+    List<string> typeLists;
+
+
+    /// <summary>
+    /// 追溯信息初始化
+    /// </summary>
+    private void RetrospectDatasInit()
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.TraceabilityServices);
+        plantInfos = api.GetAllPlantInfo().plantInfos;
+        environmentInfos = api.GetAllTransferEnvironInfo().environmentInfos;
+        wareHouses = api.GetAllWareHouseInfo().warehouses;
+        waterQualityInfos = api.GetAllWaterQualityInfo().waterQualityInfos;
+        products = api.GetAllProductNumInfo().products;
+        productionBaseInfos = api.GetAllPlantBaseInfo().productionBaseInfos;
+
+
+        typeCountList =  TypePlantField();
+    }
+    /// <summary>
+    /// 种植地区分类并获得种植地分类数值
+    /// </summary>
+    /// <returns></returns>
+    private List<int> TypePlantField()
+    {
+        string exString = string.Empty;
+        List<int> countLists = new List<int>();
+        typeLists = new List<string>();
+        foreach(var temp in plantInfos)
+        {
+            if (temp.plantFieldNum.ToString().Substring(0, 2) != exString)
+            {
+                typeLists.Add(temp.plantFieldNum.ToString().Substring(0, 2));
+                exString = temp.plantFieldNum.ToString().Substring(0, 2);
+            }
+        }
+        if (typeLists != null)
+        {
+            foreach(var temp in typeLists)
+            {
+                countLists.Add(plantInfos.Where(a => a.plantFieldNum.Contains(temp)).Count());
+            }
+        }
+        return countLists;
+    }
+    #endregion
+
+    protected override Task OnInitializedAsync()
+    {
+        NavigationManager.LocationChanged += HandleLocationChanged;
+        return base.OnInitializedAsync();
+    }
+
+    private void HandleLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        JSRuntime.InvokeVoidAsync("removeflexible", null);
+        humiflag = false;
+        getwaterflag = false;
+    }
+
+    public bool flag = true;
+    public void Dispose()
+    {
+        JSRuntime.InvokeVoidAsync("loadLib", null);
+        // NavigationManager.LocationChanged -= HandleLocationChanged;
+
+    }
+
+    bool humiflag=true;
+    bool getwaterflag=true;
+    public void RandomHumiTemp()
+    {
+        while (true)
+        {
+            if (humiflag)
+            {
+                temphumi[0] = temphumiRandom.Next(24, 38);
+                temphumi[1] = temphumiRandom.Next(40, 80);
+                JSRuntime.InvokeVoidAsync("startTempHumiListener", temphumi);
+                System.Threading.Thread.Sleep(3000);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
+    private void getwaterqualityRandom()
+    {
+        while (true)
+        {
+            if (getwaterflag)
+            {
+                waterquality[0] = waterqualityRandom.Next(4, 6);
+                waterquality[1] = waterqualityRandom.Next(22, 30);
+                waterquality[2] = waterqualityRandom.Next(2, 8);
+                JSRuntime.InvokeVoidAsync("waterqualityStart", waterquality);
+                System.Threading.Thread.Sleep(5000);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    public int checking { get; set; }
+    //操控设备
+    public async void OpenFan()
+    {
+        checking++;
+        if (checking%2!=0)
+        {
+            Nlecloud nlecloud = new Nlecloud();
+            AccountDTO accountDTO = new AccountDTO()
+            {
+                Account = "13850526746",
+                Password = "a8629327",
+                IsRememberMe = true
+            };
+            string accesstoken = nlecloud.UserLogin(accountDTO);
+            CmdsDTO x = nlecloud.ControlDevices(accesstoken, "104912", "on_off",1);
+        }
+        else
+        {
+            Nlecloud nlecloud = new Nlecloud();
+            AccountDTO accountDTO = new AccountDTO()
+            {
+                Account = "13850526746",
+                Password = "a8629327",
+                IsRememberMe = true
+            };
+            string accesstoken = nlecloud.UserLogin(accountDTO);
+            CmdsDTO x = nlecloud.ControlDevices(accesstoken, "104912", "on_off",0);
+        }
+    }
+
+}
+
+

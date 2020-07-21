@@ -1,0 +1,35 @@
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-16 15:12:39,586 [1]
+【信息详情】：Now listening on: http://localhost:5000
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-16 15:12:39,623 [1]
+【信息详情】：Application started. Press Ctrl+C to shut down.
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-16 15:12:39,627 [1]
+【信息详情】：Hosting environment: Development
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-16 15:12:39,634 [1]
+【信息详情】：Content root path: E:\Project\NutritiveMealSystem\NutritiveMealSystem.UserServices
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：WARN 
+【记录时间】：2020-07-16 15:12:54,282 [7]
+【信息详情】：The Server execute GetAllParentInfo Function  --2020/7/16 15:12:54
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：WARN 
+【记录时间】：2020-07-16 15:13:13,895 [14]
+【信息详情】：The server execute GetConditionChildrenInfo Fuction  --2020/7/16 15:13:13
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：WARN 
+【记录时间】：2020-07-16 15:13:14,079 [18]
+【信息详情】：The server execute GetConditionChildrenInfo Fuction  --2020/7/16 15:13:14

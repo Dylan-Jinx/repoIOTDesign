@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.main.parent.ParentFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="410dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/shipu"
+                    app:riv_corner_radius="10dp" />
+
+                <TextView
+                    android:id="@+id/main1_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="查看食谱"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line1"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="50dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/geren"
+                    app:riv_corner_radius="10dp" />
+
+                <TextView
+                    android:id="@+id/main1_text1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="个人信息"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/line3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:riv_corner_radius="10dp"
+                    android:src="@drawable/xuesheng" />
+
+                <TextView
+                    android:id="@+id/main1_text2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="学生信息"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line3"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="50dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img3"
+                    android:layout_width="60dp"
+                    app:riv_corner_radius="10dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/chushi" />
+
+                <TextView
+                    android:id="@+id/main1_text3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="食堂人员信息"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="410dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/line5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img4"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/shumiao"
+                    app:riv_corner_radius="10dp" />
+
+                <TextView
+                    android:id="@+id/main1_text4"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="种植信息"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line5"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="50dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img5"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/chanping"
+                    app:riv_corner_radius="10dp" />
+
+                <TextView
+                    android:id="@+id/main1_text5"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="产品批次"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/line7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line6"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img6"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:riv_corner_radius="10dp"
+                    android:src="@drawable/shengchan" />
+
+                <TextView
+                    android:id="@+id/main1_text6"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="生产基地"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line7"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="50dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/main1_img7"
+                    android:layout_width="60dp"
+                    app:riv_corner_radius="10dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/shuizhi" />
+
+                <TextView
+                    android:id="@+id/main1_text7"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kaiti"
+                    android:gravity="center"
+                    android:text="水质信息"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</HorizontalScrollView>

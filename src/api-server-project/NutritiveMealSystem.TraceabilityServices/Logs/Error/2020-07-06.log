@@ -1,0 +1,84 @@
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-06 14:27:01,522 
+【执行时间】：[6940]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/PlantInfo" for actions - NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.AddPlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UpdatePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.DeletePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.PlantInfoPages (NutritiveMealSystem.TraceabilityServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-06 14:27:26,631 
+【执行时间】：[6091]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/PlantInfo" for actions - NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.AddPlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UpdatePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.DeletePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.PlantInfoPages (NutritiveMealSystem.TraceabilityServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-06 14:28:00,549 
+【执行时间】：[6933]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/PlantInfo" for actions - NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.AddPlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UpdatePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.DeletePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.PlantInfoPages (NutritiveMealSystem.TraceabilityServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-06 14:29:11,138 
+【执行时间】：[6345]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/PlantInfo" for actions - NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.AddPlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UpdatePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.DeletePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.PlantInfoPages (NutritiveMealSystem.TraceabilityServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-06 14:30:10,412 
+【执行时间】：[9015]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/PlantInfo" for actions - NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.AddPlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UpdatePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.DeletePlantInfo (NutritiveMealSystem.TraceabilityServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-06 14:33:17,924 
+【执行时间】：[8138]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/PlantInfo" for actions - NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.AddPlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.UpdatePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.DeletePlantInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.PlantInfoController.PlantInfoPages (NutritiveMealSystem.TraceabilityServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：ERROR
+【记录时间】：2020-07-06 17:24:17,158 
+【执行时间】：[7377]毫秒
+An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Conflicting method/path combination "POST api/TransCompanyInfo" for actions - NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.AddCompanyInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.UpdateCompanyInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.DeleteCompanyInfo (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.CompanyInfoPage (NutritiveMealSystem.TraceabilityServices),NutritiveMealSystem.TraceabilityServices.Controllers.TransCompanyInfoController.CompanyInfoSearchNamePage (NutritiveMealSystem.TraceabilityServices). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

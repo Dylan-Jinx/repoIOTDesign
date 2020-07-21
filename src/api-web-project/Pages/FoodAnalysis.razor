@@ -1,0 +1,244 @@
+﻿@page "/FoodNutrition"
+
+@inject MessageService _message
+
+<div>
+    <Input Placeholder="请输入你要查询的员工姓名" @bind-Value="@txtValue" Class="col-md-3" />
+    <button Class="btn btn-primary col-md-1 font-w-b" style="margin-left:15px" @onclick="SearchInfo">查询</button>
+    <button Class="btn btn-success col-md-1 font-w-b" @onclick="@(() => { _addvisible = true; })">添加</button>
+    <button Class="btn btn-warning col-md-2 font-w-b" @onclick="getAllDatas">获取所有数据</button>
+    <br />
+    <br />
+</div>
+
+<Table @ref="table"
+       DataSource="foodNutritions"
+       Total="_total"
+       Bordered="@true"
+       @bind-PageIndex="_pageIndex"
+       @bind-PageSize="_pageSize"
+       OnPageIndexChange="async e => await fetchData(e)"
+       @bind-SelectedRows="selectedRows">
+    <Selection Key="@context.id.ToString()" />
+    <Column Class="tex" Title="id" @bind-Field="@context.id"></Column>
+    <Column Class="tex1" Title="食材名" @bind-Field="@context.foodName"></Column>
+    <Column Class="tex" Title="介绍" @bind-Field="@context.introduce"></Column>
+    <Column Class="tex" Title="营养成分" @bind-Field="@context.nutritionalIngredient"></Column>
+    <Column Class="tex" Title="图片" @bind-Field="@context.images">
+        <Tooltip Placement="@PlacementType.Top" Title="@("点击放大图片")">
+            <img style="height:80px;width:auto" src=@("http://123.56.152.95:5727/" + context.images) @onclick="lookBigImage" />
+        </Tooltip>
+    </Column>
+    <ActionColumn Title="操作">
+        <Space Size="middle">
+            <SpaceItem><button class="btn btn-outline-info font-b" style="white-space:nowrap">查看详细</button></SpaceItem>
+            <SpaceItem><button class="btn btn-outline-warning font-b" style="white-space:nowrap" @onclick="EnterUpdateForm">修改</button></SpaceItem>
+            <SpaceItem>
+                <button Class="btn btn-outline-danger font-b" style="white-space:nowrap" @onclick="@(() => { _visible = true; })">删除</button>
+            </SpaceItem>
+        </Space>
+    </ActionColumn>
+</Table>
+
+<h5>selections:</h5>
+@if (selectedRows != null && selectedRows.Any())
+{
+    <Button Danger Size="small" OnClick="@(e => { table.SetSelection(null); })">清除选项</Button>
+
+    @foreach (var selected in selectedRows)
+    {
+        <Tag @key="selected.id">选中的选项为：@selected.foodName</Tag>
+    }
+}
+<Modal Visible="@_imagevisible" OnCancel="closeImageShow" Title="@imagetitle" OkType="" Keyboard="true" Footer="@null">
+    <img style="height:300px;width:auto;text-align:center" src=@("http://123.56.152.95:5728/"+imagepath) />
+</Modal>
+
+@* 更新内容的弹框 *@
+<Modal Visible="@_updatevisible" OnOk="@UpdateHandleOk" OnCancel="@UpdateHandleCancel" Title="@updatetitle">
+    <Form Model="@updateFoodNutrition">
+        <FormItem Label="Id">
+            <Input @bind-Value="@context.id" />
+        </FormItem>
+        <FormItem Label="食材名">
+            <Input @bind-Value="@context.foodName" />
+        </FormItem>
+        <FormItem Label="介绍">
+            <TextArea @bind-Value="@context.introduce" />
+        </FormItem>
+        <FormItem Label="营养成分">
+            <TextArea @bind-Value="@context.nutritionalIngredient" />
+        </FormItem>
+    </Form>
+</Modal>
+
+<style>
+    .tex1 {
+        font-weight: bold;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        text-align: center
+    }
+
+    .tex {
+        font-weight: bold
+    }
+
+    .font-w-b {
+        color: white;
+        font-weight: bold;
+    }
+
+    .font-b {
+        font-weight: bold;
+    }
+</style>
+
+@code {
+    public FoodNutritions[] foodNutritions { get; set; }
+    public FoodNutritions updateFoodNutrition { get; set; }
+    public FoodNutritions addFoodNutrition = new FoodNutritions();
+
+
+    public string addtitle = "添加信息";
+    public string updatetitle = "修改信息";
+    public string deletetitle = "删除警告";
+    public string imagetitle = "查看图片";
+    public string imagepath { get; set; }
+
+    public bool _visible { get; set; }
+    public bool _updatevisible { get; set; }
+    public bool _addvisible { get; set; }
+    public bool _imagevisible { get; set; }
+
+    IEnumerable<FoodNutritions> selectedRows;
+    ITable table;
+
+    /// <summary>
+    /// 绑定是查询输入框输入的内容
+    /// </summary>
+    public string txtValue { get; set; }
+
+    int _pageIndex = 1;
+    int _pageSize = 5;
+    int _total = 0;
+
+    protected override Task OnInitializedAsync()
+    {
+        getAllFoodNutrition();
+        return base.OnInitializedAsync();
+    }
+
+    /// <summary>
+    /// 查找按钮事件
+    /// </summary>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    public async Task SearchInfo(EventArgs e)
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        await Task.Run(() =>
+        {
+            foodNutritions = api.GetAllFoodNutrionSearchPages(txtValue, _pageSize, _pageIndex).pageList.ToArray();
+            _total = foodNutritions.Length;
+        });
+    }
+
+    async Task getAllDatas(EventArgs e)
+    {
+        await Task.Run(() =>
+        {
+            getAllFoodNutrition();
+        });
+    }
+
+    /// <summary>
+    /// 分页事件
+    /// </summary>
+    /// <param name="args"></param>
+    /// <returns></returns>
+    public Task<bool> fetchData(PaginationEventArgs args)
+    {
+        getAllFoodNutrition(args.PageSize, args.PageIndex);
+        return Task.FromResult(true);
+
+    }
+
+    void getAllFoodNutrition(int pagesize = 5, int pageindex = 1)
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        foodNutritions = api.GetAllFoodNutrionPages(pagesize, pageindex).pageList.ToArray();
+        _total = api.GetAllFoodNutrion().foodNutritions.Count;
+    }
+
+    #region——查看图片内容——
+    void lookBigImage(EventArgs e)
+    {
+        if (selectedRows != null)
+        {
+            var selectedRow = selectedRows;
+            imagepath = selectedRow.First().images;
+            _imagevisible = true;
+        }
+        else
+        {
+            _message.Error("请先选定要查看详情图片行", 3);
+        }
+    }
+    void closeImageShow(EventArgs e)
+    {
+        _imagevisible = false;
+    }
+    #endregion
+
+    #region--更新按钮事件——
+
+    private void EnterUpdateForm(EventArgs e)
+    {
+        string Selected;
+        if (selectedRows == null)
+        {
+            _message.Warning("请先勾选你要修改的条目", 3);
+            return;
+        }
+        else
+        {
+            if (selectedRows.Count() > 1)
+            {
+                _message.Warning("一次只能选择一个条目", 3);
+                return;
+            }
+            Selected = selectedRows.First().foodName;
+        }
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        updateFoodNutrition = api.UseFoodNameByNutritionInfo(Selected).foodNutritions.First();
+        _updatevisible = true;
+    }
+
+    private void UpdateHandleOk(MouseEventArgs e)
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        StatuDTO result = api.UpdateFoodNutrition(updateFoodNutrition);
+        if (result.statusCode == 200)
+        {
+            _message.Success("修改成功", 3);
+            _updatevisible = false;
+            getAllFoodNutrition();
+            table.SetSelection(null);
+        }
+        else
+        {
+            _message.Error("修改失败", 3);
+            _updatevisible = false;
+            getAllFoodNutrition();
+        }
+    }
+
+    private void UpdateHandleCancel(MouseEventArgs e)
+    {
+        Console.WriteLine(e);
+        _updatevisible = false;
+    }
+    #endregion
+}

@@ -1,0 +1,342 @@
+﻿@page "/Nutrition"
+@inject MessageService _message
+<div>
+    <Input Placeholder="Basic usage" @bind-Value="@txtValue" Class="col-md-3" />
+    <button Class="btn btn-primary col-md-1 font-w-b" style="margin-left:15px" @onclick="SearchInfo">查询</button>
+    <button Class="btn btn-success col-md-1 font-w-b" @onclick="@(()=>{ _addvisible = true; })">添加</button>
+    <button Class="btn btn-warning col-md-2 font-w-b" @onclick="getAllDatas">获取所有数据</button>
+    <br />
+    <br />
+</div>
+<Table @ref="table"
+       DataSource="@pagedata"
+       Total="_total"
+       Bordered="@true"
+       @bind-PageIndex="_pageIndex"
+       @bind-PageSize="_pageSize"
+       OnPageIndexChange="async e=>await fetchData(e)"
+       @bind-SelectedRows="selectedRows">
+    <Selection Key="@(context.id.ToString())" />
+    <Column Class="tex" @bind-Field="@context.id"></Column>
+    <Column Class="tex1" @bind-Field="@context.name"></Column>
+    <Column Class="tex1" @bind-Field="@context.otherName"></Column>
+    <Column Class="tex" @bind-Field="@context.source"></Column>
+    <Column Class="tex" @bind-Field="@context.deSymptom"></Column>
+    <Column Class="tex" @bind-Field="@context.muchHarm"></Column>
+    <Column Class="tex" @bind-Field="@context.introduction"></Column>
+    <Column Class="tex" @bind-Field="@context.unit"></Column>
+    <Column Class="tex" @bind-Field="@context.focusGroups"></Column>
+    <Column Class="tex" @bind-Field="@context.highContentOfSource"></Column>
+    <ActionColumn Title="操作">
+        <Space Size="middle">
+            <SpaceItem><button class="btn btn-outline-info font-b" style="white-space:nowrap">查看详细</button></SpaceItem>
+            <SpaceItem><button class="btn btn-outline-warning font-b" style="white-space:nowrap" @onclick="EnterUpdateForm">修改</button></SpaceItem>
+            <SpaceItem>
+                <button Class="btn btn-outline-danger font-b" style="white-space:nowrap" @onclick="@(()=>{ _visible = true; })">删除</button>
+            </SpaceItem>
+        </Space>
+    </ActionColumn>
+</Table>
+@* 删除的弹框 *@
+<Modal Visible="@_visible" OnOk="@HandleOk" OnCancel="@HandleCancel" Title="@deletetitle">
+    <p style="color:red;font-weight:bold;font-size:40px"><img width="80" height="80" src="img/Warning.png" />警告</p>
+    <p style="font-size:24px">确认将该条记录删除吗?</p>
+</Modal>
+@* 更新内容的弹框 *@
+<Modal Visible="@_updatevisible" OnOk="@UpdateHandleOk" OnCancel="@UpdateHandleCancel" Title="@updatetitle">
+    <Form Model="@updatesearch">
+        <FormItem Label="Id">
+            <Input @bind-Value="@context.id" />
+        </FormItem>
+        <FormItem Label="名称">
+            <Input @bind-Value="@context.name" />
+        </FormItem>
+        <FormItem Label="别名">
+            <Input @bind-Value="@context.otherName" />
+        </FormItem>
+        <FormItem Label="计量单位">
+            <Input @bind-Value="@context.unit" />
+        </FormItem>
+        <FormItem Label="少量摄入">
+            <TextArea @bind-Value="@context.deSymptom" />
+        </FormItem>
+        <FormItem Label="过量摄入">
+            <TextArea @bind-Value="@context.muchHarm" />
+        </FormItem>
+        <FormItem Label="重点人群">
+            <Input @bind-Value="@context.focusGroups" />
+        </FormItem>
+        <FormItem Label="来源">
+            <TextArea @bind-Value="@context.source" />
+        </FormItem>
+        <FormItem Label="高含量来源">
+            <TextArea @bind-Value="@context.highContentOfSource" />
+        </FormItem>
+        <FormItem Label="介绍">
+            <TextArea @bind-Value="@context.introduction" />
+        </FormItem>
+    </Form>
+</Modal>
+@* 添加内容的弹框 *@
+<Modal Visible="@_addvisible" OnOk="@addHandleOk" OnCancel="@addHandleCancel" Title="@addtitle">
+    <Form Model="@addnutrition">
+        <FormItem Label="Id">
+            <Input @bind-Value="@context.id" />
+        </FormItem>
+        <FormItem Label="名称">
+            <Input @bind-Value="@context.name" />
+        </FormItem>
+        <FormItem Label="别名">
+            <Input @bind-Value="@context.otherName" />
+        </FormItem>
+        <FormItem Label="计量单位">
+            <Input @bind-Value="@context.unit" />
+        </FormItem>
+        <FormItem Label="少量摄入">
+            <TextArea @bind-Value="@context.deSymptom" />
+        </FormItem>
+        <FormItem Label="过量摄入">
+            <TextArea @bind-Value="@context.muchHarm" />
+        </FormItem>
+        <FormItem Label="重点人群">
+            <Input @bind-Value="@context.focusGroups" />
+        </FormItem>
+        <FormItem Label="来源">
+            <TextArea @bind-Value="@context.source" />
+        </FormItem>
+        <FormItem Label="高含量来源">
+            <TextArea @bind-Value="@context.highContentOfSource" />
+        </FormItem>
+        <FormItem Label="介绍">
+            <TextArea @bind-Value="@context.introduction" />
+        </FormItem>
+    </Form>
+</Modal>
+<h5>selections:</h5>
+@if (selectedRows != null && selectedRows.Any())
+{
+    <Button Danger Size="small" OnClick="@(e => { table.SetSelection(null); })">清除选项</Button>
+
+    @foreach (var selected in selectedRows)
+    {
+        <Tag @key="selected.id">选中的选项为：@selected.id</Tag>
+    }
+}
+
+<Spin Tip="加载页面中......." size="large" Spinning="@pageloadstate" />
+
+<style>
+    .tex1 {
+        font-weight: bold;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        text-align: center
+    }
+
+    .tex {
+        font-weight: bold;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        text-align: center;
+        column-width: 50px;
+    }
+
+
+    .font-w-b {
+        color: white;
+        font-weight: bold;
+    }
+
+    .font-b {
+        font-weight: bold;
+    }
+</style>
+
+@code{
+    public NutrientInformation[] pagedata { get; set; }
+    public NutrientInformation updatesearch { get; set; }
+    public NutrientInformation addnutrition = new NutrientInformation();
+
+
+
+    public string addtitle = "添加信息";
+    public string updatetitle = "修改信息";
+    public string deletetitle = "删除警告";
+    public bool pageloadstate = false;
+
+    public bool _visible { get; set; }
+    public bool _updatevisible { get; set; }
+    public bool _addvisible { get; set; }
+
+    /// <summary>
+    /// 绑定是查询输入框输入的内容
+    /// </summary>
+    public string txtValue { get; set; }
+
+    IEnumerable<NutrientInformation> selectedRows;
+    ITable table;
+
+    int _pageIndex = 1;
+    int _pageSize = 6;
+    int _total = 0;
+
+    protected override Task OnInitializedAsync()
+    {
+        //PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        //NutrientInformationDTO resultcount = api.GetAllNutrition();
+        //data = resultcount.nutrientInformation.ToArray();
+        //pagedata = api.PageNutrition(_pageSize, _pageIndex).pageList.ToArray();
+
+
+        getPage(_pageIndex, _pageSize);
+        return base.OnInitializedAsync();
+    }
+
+    public Task<bool> fetchData(PaginationEventArgs args)
+    {
+        //PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        //pagedata = api.PageNutrition(args.PageSize, args.PageIndex).pageList.ToArray();
+        getPage(args.PageIndex, args.PageSize);
+        return Task.FromResult(pageloadstate);
+
+    }
+
+    public async Task<bool> getAllDatas(EventArgs e)
+    {
+        pageloadstate = true;
+        getPage();
+        System.Threading.Thread.Sleep(1000);
+        return await Task.FromResult(pageloadstate = false);
+    }
+
+    public void getPage(int pageindex = 1, int pagesize = 6)
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        pagedata = api.PageNutrition(pagesize, pageindex).pageList.ToArray();
+        _total = api.GetAllNutrition().nutrientInformation.Count;
+    }
+
+    /// <summary>
+    /// 查找按钮事件
+    /// </summary>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    public async Task<bool> SearchInfo(EventArgs e)
+    {
+        pageloadstate = true;
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        pagedata = api.SearchNutrition(txtValue, _pageSize, _pageIndex).pageList.ToArray();
+        _total = pagedata.Length;
+        System.Threading.Thread.Sleep(1000);
+        pageloadstate = false;
+        return await Task.FromResult(pageloadstate);
+    }
+
+    #region  ——添加按钮事件——
+    public void addHandleOk(EventArgs e)
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        StatuDTO result = api.AddNutritionInfo(addnutrition);
+        if (result.statusCode == 200)
+        {
+            _message.Success("添加成功", 3);
+            _addvisible = false;
+            getPage();
+        }
+        else
+        {
+            _message.Error("添加失败", 3);
+            _addvisible = false;
+            getPage();
+        }
+    }
+
+    public void addHandleCancel(EventArgs e)
+    {
+        _addvisible = false;
+    }
+    #endregion
+
+    #region--更新按钮事件——
+
+    private void EnterUpdateForm(EventArgs e)
+    {
+        string Selected;
+        if (selectedRows == null)
+        {
+            _message.Warning("请先勾选你要修改的条目", 3);
+            return;
+        }
+        else
+        {
+            if (selectedRows.Count() > 1)
+            {
+                _message.Warning("一次只能选择一个条目", 3);
+                return;
+            }
+            Selected = selectedRows.First().name;
+        }
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        updatesearch = api.SearchNutritionInfo(Selected).nutrientInformation.First();
+        _updatevisible = true;
+    }
+
+    private void UpdateHandleOk(MouseEventArgs e)
+    {
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        StatuDTO result = api.UpdateNutritionInfo(updatesearch);
+        if (result.statusCode == 200)
+        {
+            _message.Success("修改成功", 3);
+            _updatevisible = false;
+            table.SetSelection(null);
+            getPage();
+        }
+        else
+        {
+            _message.Error("修改失败", 3);
+            _updatevisible = false;
+            getPage();
+        }
+    }
+
+    private void UpdateHandleCancel(MouseEventArgs e)
+    {
+        Console.WriteLine(e);
+        _updatevisible = false;
+    }
+    #endregion
+
+    #region --删除按钮事件--
+
+    private void HandleOk(MouseEventArgs e)
+    {
+        var Selected = selectedRows.First().id;
+        Console.WriteLine(Selected);
+        _visible = false;
+        PlatformSDKApi api = new PlatformSDKApi("", ServicesType.FoodAnalysisServices);
+        StatuDTO result = api.UpdateNutritionInfo(updatesearch);
+        if (result.statusCode == 200)
+        {
+            _message.Success("删除成功", 3);
+            _updatevisible = false;
+            getPage();
+        }
+        else
+        {
+            _message.Error("删除失败", 3);
+            _updatevisible = false;
+            getPage();
+        }
+    }
+
+    private void HandleCancel(MouseEventArgs e)
+    {
+        Console.WriteLine(e);
+        _visible = false;
+        getPage();
+    }
+    #endregion
+}

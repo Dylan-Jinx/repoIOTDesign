@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.account.LoginActivity"
+    android:background="@drawable/backgroud">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:src="@drawable/logo"/>
+
+        <com.example.nutritional.view.ClearEditTextView
+            android:id="@+id/login_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="UserName"
+            android:fontFamily="@font/kaiti"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="10"
+            android:paddingLeft="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/login_pwd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:hint="Password"
+                android:inputType="numberPassword"
+                android:fontFamily="@font/kaiti"
+                android:lines="1"
+                android:maxLength="8"
+                android:paddingLeft="20dp" />
+
+            <ImageView
+                android:id="@+id/image_pwd"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/login_password" />
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/login_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp">
+            <RadioButton
+                android:id="@+id/radio_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="家长"
+                android:checked="true"
+                android:fontFamily="@font/kaiti"
+                android:textSize="18dp"/>
+            <RadioButton
+                android:id="@+id/radio_staff"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="员工"
+                android:fontFamily="@font/kaiti"
+                android:textSize="18dp"/>
+        </RadioGroup>
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_marginTop="30dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Sign  In"
+            android:fontFamily="@font/kaiti"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <include
+        layout="@layout/copyright"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

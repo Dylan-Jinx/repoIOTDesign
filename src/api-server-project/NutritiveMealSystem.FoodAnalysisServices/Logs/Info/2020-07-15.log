@@ -1,0 +1,25 @@
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-15 22:08:51,730 [1]
+【信息详情】：Now listening on: http://localhost:5001
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-15 22:08:51,804 [1]
+【信息详情】：Application started. Press Ctrl+C to shut down.
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-15 22:08:51,839 [1]
+【信息详情】：Hosting environment: Development
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：INFO 
+【记录时间】：2020-07-15 22:08:51,843 [1]
+【信息详情】：Content root path: E:\Project\NutritiveMealSystem\NutritiveMealSystem.FoodAnalysisServices
+
+＝＝＝＝＝＝＝＝＝＝
+【日志级别】：WARN 
+【记录时间】：2020-07-15 22:09:10,240 [15]
+【信息详情】：The server execute GetAllCookBook Function  --2020/7/15 22:09:10

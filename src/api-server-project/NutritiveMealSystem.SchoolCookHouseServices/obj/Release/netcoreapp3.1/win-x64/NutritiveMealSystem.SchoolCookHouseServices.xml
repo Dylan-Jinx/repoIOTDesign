@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NutritiveMealSystem.SchoolCookHouseServices</name>
+    </assembly>
+    <members>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController">
+            <summary>
+            对T_Bill（账单表）的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.GetAllBill">
+            <summary>
+            返回T_Bill（账单表）的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.AddBill(System.Single,System.DateTime,System.String,System.String)">
+            <summary>
+            添加账单
+            </summary>
+            <param name="price">价格</param>
+            <param name="BillDatetime">记账日期</param>
+            <param name="conductor">操作员</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.DeleteBill(System.Int32)">
+            <summary>
+            通过账单ID进行删除
+            </summary>
+            <param name="id">账单ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.GetConditionBill(System.Int32)">
+            <summary>
+            通过账单ID进行查询
+            </summary>
+            <param name="id">账单ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.UpdateBill(System.Int32,System.Single,System.DateTime,System.String,System.String)">
+            <summary>
+            修改T_Bill（账单表）的数据
+            </summary>
+            <param name="id">账单ID</param>
+            <param name="price">价格</param>
+            <param name="BillDatetime">记账日期</param>
+            <param name="conductor">操作员</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPages(System.Int32,System.Int32)">
+            <summary>
+            查询账单信息  并分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.BillController.BillInfoPagesSearch(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            根据日期查具体时间  并分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="starttime">查询的账单开始日期</param>
+            <param name="endtime">查询的账单结束日期</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController">
+            <summary>
+            对T_CookHouseInfo（厨房信息表）的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.GetAllCookHouseInfo">
+            <summary>
+            返回T_CookHouseInfo（厨房信息表）的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.AddCookHouseInfo(System.String,System.Single,System.Single,System.String)">
+            <summary>
+            上传厨房信息
+            </summary>
+            <param name="cookhousename">厨房名称</param>
+            <param name="temperature">温度</param>
+            <param name="humidity">湿度</param>
+            <param name="reporttime">上报时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.DeleteCookHouseInfo(System.String)">
+            <summary>
+            删除厨房信息
+            </summary>
+            <param name="cookhousename">厨房名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.GetConditionCookHouseInfo(System.String)">
+            <summary>
+            通过厨房名称查询厨房信息
+            </summary>
+            <param name="cookhousename">厨房名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.UpdateCookHouseInfo(System.String,System.String,System.Single,System.Single,System.String)">
+            <summary>
+            修改T_CookHouseInfo（厨房信息表）的信息
+            </summary>
+            <param name="conditionusercookhousename">厨房名称-条件</param>
+            <param name="cookhousename">厨房名称</param>
+            <param name="temperature">温度</param>
+            <param name="humidity">湿度</param>
+            <param name="reporttime">上传时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.CookHouseInfoPages(System.Int32,System.Int32)">
+            <summary>
+            查询所有信息  并分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.CookHouseInfoController.CookHouseInfoPagesSearch(System.Int32,System.Int32,System.String)">
+            <summary>
+            查询单个厨房信息  并分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="cookhousename">查询的厨房名</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Controllers.HealthCheckController">
+            <summary>
+            实现健康、服务状态检查
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.SchoolCookHouseServices.Controllers.HealthCheckController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.HealthCheckController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.SchoolCookHouseServices.Controllers.HealthCheckController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.HealthCheckController.Get">
+            <summary>
+            用于健康检查，心跳检测，检测服务是否出现异常或者是中断
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController">
+            <summary>
+            对T_Staff（员工表）的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.GetAllStaff">
+            <summary>
+            返回T_Staff（员工表）的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.AddStaff(System.String,System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            添加员工信息
+            </summary>
+            <param name="staffname">员工姓名</param>
+            <param name="telephone">电话</param>
+            <param name="position">职位</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.DeleteStaff(System.Int32)">
+            <summary>
+            根据员工ID进行删除
+            </summary>
+            <param name="id">员工ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.GetConditionStaff(System.Int32)">
+            <summary>
+            根据员工ID进行查询
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.UpdateStaff(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            根据员工ID进行修改
+            </summary>
+            <param name="conditionuserid">员工ID-条件</param>
+            <param name="staffname">员工姓名</param>
+            <param name="telephone">电话</param>
+            <param name="image">图片路径</param>
+            <param name="position">职位</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.StaffPages(System.Int32,System.Int32)">
+            <summary>
+            查询所有 分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StaffController.StaffPagesSearch(System.Int32,System.Int32,System.String)">
+            <summary>
+            查询所有 分页  精准查询
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="staffname">查询的员工名</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController">
+            <summary>
+            对T_Storage（产品信息表）的操作
+            </summary>
+        </member>
+        <member name="F:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController._logger">
+            <summary>
+            加载Log日志服务
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.#ctor(Microsoft.Extensions.Logging.ILogger{NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController})">
+            <summary>
+            初始化Log日志对象
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.GetAllStorage">
+            <summary>
+            返回T_Storage（产品信息表）的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.AddStorage(System.String,System.Single,System.DateTime,System.String)">
+            <summary>
+            添加产品信息
+            </summary>
+            <param name="productinfo">产品信息</param>
+            <param name="price">价格</param>
+            <param name="storagetime">入库日期</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.DeleteStorage(System.String)">
+            <summary>
+            根据产品信息进行删除
+            </summary>
+            <param name="productinfo">产品信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.GetConditionStorage(System.String)">
+            <summary>
+            通过产品信息进行查询
+            </summary>
+            <param name="productinfo">产品信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.UpdateStorage(System.String,System.String,System.Single,System.DateTime,System.String)">
+            <summary>
+            修改产品信息表
+            </summary>
+            <param name="conditionuserproductinfo">产品信息-条件</param>
+            <param name="productinfo">产品信息</param>
+            <param name="price">价格</param>
+            <param name="storagetime">入库日期</param>
+            <param name="remark">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.StoragePages(System.Int32,System.Int32)">
+            <summary>
+            查询所有入库信息 并分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Controllers.StorageController.StoragePagesSearch(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            根据日期查入库信息  并分页
+            </summary>
+            <param name="pagesize"></param>
+            <param name="pageindex"></param>
+            <param name="starttime">查询的账单开始日期</param>
+            <param name="endtime">查询的账单结束3日期</param>
+            <returns></returns>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.BillStatus">
+            <summary>
+            返回数据的模型状态类->对应的是T_Bill（账单表）表，继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.CookHouseInfoStatus">
+            <summary>
+            返回数据的模型状态类->对应的是T_CookHouseInfo（厨房信息表），继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.StaffStatus">
+            <summary>
+            返回数据的模型状态类->对应的是T_Staff（员工表），继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.Status">
+            <summary>
+            状态基类
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.Status.StatusCode">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.Status.Message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.Status.ReturnTime">
+            <summary>
+            返回时间
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Models.ReturnModels.StorageStatus">
+            <summary>
+            返回数据的模型状态类->对应的是T_Storage（产品信息表）表，继承Status类
+            </summary>
+        </member>
+        <member name="T:NutritiveMealSystem.SchoolCookHouseServices.Utility.ConsulHelper">
+            <summary>
+            Consul服务帮助类
+            </summary>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Utility.ConsulHelper.ConsulExtend(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            扩展，实现Consul的服务注册以及基础设置
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Utility.EFHelper`1.Add(`0)">
+            <summary>
+            添加一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Utility.EFHelper`1.Delete(`0)">
+            <summary>
+            删除一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Utility.EFHelper`1.Update(`0)">
+            <summary>
+            修改一条记录
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Utility.EFHelper`1.getList(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            条件查询
+            </summary>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Utility.EFHelper`1.getListByPage``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32,System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <typeparam name="Tkey"></typeparam>
+            <param name="where">查询条件</param>
+            <param name="orderBy">排序条件</param>
+            <param name="pageSize">每一页多少条</param>
+            <param name="pageIndex">显示第几页</param>
+            <returns></returns>
+        </member>
+        <member name="M:NutritiveMealSystem.SchoolCookHouseServices.Utility.UpLoadFile.FileSave(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="files">文件流</param>
+            <param name="cookname">文件名</param>
+            <param name="filename">输出存储的文件路径</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,63 @@
+﻿@page "/"
+@namespace AdminManageSystem.Pages
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中小学生营养配餐与食材溯源系统</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="~/css/index1.css" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="_content/AntDesign/css/ant-design-blazor.css" rel="stylesheet" />
+    <script src="_content/AntDesign/js/ant-design-blazor.js"></script>
+</head>
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    </app>
+
+    <!-- 页面主体部分 -->
+
+
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+
+
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/echarts.min.js"></script>
+    <!-- 先引入jquery -->
+    <!-- 必须先引入china.js 这个文件 因为中国地图需要 -->
+    <script src="~/js/china.js"></script>
+    <script src="~/js/TransChart.js"></script>
+    <script src="_framework/blazor.server.js"></script>
+
+    <script src="~/js/TempandHumi.js"></script>
+    <script src="~/js/CookHouseStaff.js"></script>
+    <script src="~/js/BillChart.js"></script>
+    <script src="~/js/Plantfield.js"></script>
+    <script src="~/js/WaterQuality.js"></script>
+
+    <script src="~/js/utils.js"></script>
+</body>
+</html>

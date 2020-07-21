@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/ware_house_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:text="这是仓库"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ware_house_location"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/ware_house_name"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:text="这是一个仓库"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ware_house_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/ware_house_location"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="23"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ware_house_humidity"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/ware_house_temperature"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="34"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ware_house_remark"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/ware_house_humidity"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:text="这是一个仓库"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ware_house_responsiblePerson"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/ware_house_remark"
+                android:layout_marginTop="50dp"
+                android:ellipsize="end"
+                android:gravity="right|center_vertical"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:paddingEnd="30dp"
+                android:text="操作员：pzc"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ware_house_telephone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/ware_house_responsiblePerson"
+                android:layout_marginTop="30dp"
+                android:lines="2"
+                android:ellipsize="end"
+                android:gravity="right|center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="30dp"
+                android:text="tel：15856040835"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
